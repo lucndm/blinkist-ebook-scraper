@@ -21,8 +21,8 @@ session.headers['accept-encoding'] = "gzip, deflate, br"
 session.headers['authority'] = "www.blinkist.com"
 
 book_urls = []
-username = "admin@minhluc.info"
-password = "123456"
+username = "YOUR USERNAME"
+password = "YOUR PASSWORD"
 
 
 def get_csrf_token():
@@ -144,7 +144,7 @@ def main():
         book = analytic_info_html(book=book, url="https://www.blinkist.com/en/books/{title}.html".format(title=title))
         book = analytic_content_html(book=book, url="https://www.blinkist.com/en/reader/{title}/".format(title=title))
         print('Saving epub')
-        book.make('./books/{title}'.format(title=book.title.translate(ILLEAGAL_FILENAME_CHARACTERS)))
+        book.make('./{title}'.format(title=book.title.translate(ILLEAGAL_FILENAME_CHARACTERS)))
 
 
 if __name__ == '__main__':
